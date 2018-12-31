@@ -1,17 +1,15 @@
-import Link from "next/link";
-import Head from "components/templates/head.js";
+import Head from 'components/templates/head.js'
+import Navigation from 'components/templates/navigation'
+import css from 'static/css/pages/index.scss'
 
 const Index = () => {
   return (
     <div>
       <Head title="Index page" />
-      <Link href="/">
-        <p>Index page</p>
-      </Link>
-      <Link href="/about">
-        <p>About</p>
-      </Link>
+      <Navigation />
+      <p className={css.item}>Hello world</p>
+      <p>Index</p>
     </div>
-  );
-};
-export default Index;
+  )
+}
+export default Index
