@@ -1,11 +1,4 @@
-import { TICK, INCREMENT, DECREMENT, RESET } from './action-types'
-
-const actionTypes = {
-  TICK,
-  INCREMENT,
-  DECREMENT,
-  RESET
-}
+import actionTypes from './action-types'
 
 // ACTIONS
 export const serverRenderClock = isServer => dispatch => {
