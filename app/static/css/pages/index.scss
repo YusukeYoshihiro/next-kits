@@ -1,5 +1,5 @@
-@import 'static/css/size/index';
-@import 'static/css/color/index';
+@import '../size/index';
+@import '../color/index';
 
 .item {
   font-size: $title-font;

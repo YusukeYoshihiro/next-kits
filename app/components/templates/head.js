@@ -1,6 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
-import info from '../../package.json'
+import info from '../../../package.json'
 
 const defaultOGURL = ''
 const defaultOGImage = ''

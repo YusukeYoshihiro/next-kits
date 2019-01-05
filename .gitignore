@@ -91,3 +91,4 @@ out
 package-lock.json
 yarn.lock
 sw.*
+public

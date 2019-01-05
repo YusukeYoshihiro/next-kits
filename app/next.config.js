@@ -3,6 +3,8 @@ const withSass = require('@zeit/next-sass')
 
 module.exports = withSass({
   cssModules: true,
+  outDir: '../public',
+  distDir: '../.next',
   webpack(config, options) {
     const { dev } = options
     if (!dev) {
@@ -20,10 +22,5 @@ module.exports = withSass({
       '.jpeg'
     ]
     return config
-  },
-  exportPathMap() {
-    return {
-      '/': { page: '/' }
-    }
   }
 })
