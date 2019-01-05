@@ -20,10 +20,5 @@ module.exports = withSass({
       '.jpeg'
     ]
     return config
-  },
-  exportPathMap() {
-    return {
-      '/': { page: '/' }
-    }
   }
 })
