@@ -1,0 +1,8 @@
+@import '../size/index';
+@import '../color/index';
+
+.item {
+  font-size: $title-font;
+  font-weight: bold;
+  color: $brand-main;
+}

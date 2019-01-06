@@ -1,0 +1,3 @@
+# Store page
+
+example
