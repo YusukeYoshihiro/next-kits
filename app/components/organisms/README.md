@@ -1,3 +1,0 @@
-# organisms page
-
-example
