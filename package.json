@@ -5,15 +5,16 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
+    "dev:export": "cd ./out && python -m SimpleHTTPServer 8000",
     "build": "next build",
     "start": "next start",
-    "export": "next export",
+    "export": "npm run build && next export",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "next": "^7.0.2",
+    "next": "^9.0.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
   },

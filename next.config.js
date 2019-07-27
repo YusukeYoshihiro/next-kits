@@ -1,8 +1,6 @@
 const path = require('path')
-const withSass = require('@zeit/next-sass')
 
-module.exports = withSass({
-  cssModules: true,
+module.exports = {
   webpack(config, options) {
     const { dev } = options
     if (!dev) {
@@ -26,4 +24,5 @@ module.exports = withSass({
       '/': { page: '/' }
     }
   }
-})
+};
+
