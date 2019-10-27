@@ -1,6 +1,9 @@
 const path = require('path')
+const serverless = process.env.ENV_SERVELESS;
+const configServeless = serverless ? { target: serverless} : {};
 
 module.exports = {
+  ...configServeless,
   webpack(config, options) {
     const { dev } = options
     if (!dev) {
