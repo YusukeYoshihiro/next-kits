@@ -4,38 +4,34 @@ import Head from '../components/templates/head'
 import Navigation from '../components/templates/navigation'
 import Button from '../components/atoms/Button'
 
-// useContext
-// useReducer
 interface List {
   title: string,
   isDone: boolean
 }
 
-interface ListProps {
-  list: [List]
-}
-
-const Lists: React.FC = props => {
-  // const { list } = props;
-  console.log(props);
-  return <div>{props}</div>
-
-  // return (
-  //   <ul>
-  //   {
-  //     list.map(item => <li key={item}>{item}</li>)
-  //   }
-  //   </ul>
-  // )
+const Lists: React.FC<any> = props => {
+  const { todo } = props;
+  return (
+    <ul>
+    {
+      todo.map(({title, isDone}, i) => {
+        const doneClass = isDone ? 'is-done' : '';
+        return <li key={i} className={doneClass}>{title}</li>
+      })
+    }
+    </ul>
+  )
 };
 
 const Index: React.FC = () => {
   // use local state
   const [count, setCount] = useState(0);
-  // const [todo, addTodo] = useState([]);
-  const todoList: [List] = [{
+  const todoList: Array<List> = [{
     title: 'aaaa',
     isDone: false
+  },{
+    title: '掃除',
+    isDone: true
   }];
 
   // use side effect hooks
@@ -48,10 +44,11 @@ const Index: React.FC = () => {
     <div>
       <Head title="Index page" />
       <Navigation />
-      <p>hooks sample</p>
+      <p style={{color: '#e74c3c'}}>state & effect hooks sample</p>
       <div>count: {count}</div>
       <Button title="+1" action={() => setCount(count + 1)} />
       <Button title="-1" action={() => setCount(count - 1)} />
+      <Lists todo={todoList} />
     </div>
   )
 }
