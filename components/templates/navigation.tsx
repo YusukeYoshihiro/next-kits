@@ -28,18 +28,17 @@ const NavigationContainer = styled.ul`
   display:flex;
   justify-content: center;
   align-item: center;
-`;
-
-const Item = styled.li`
-  color: #222;
-  font-size: 24px;
-  list-style: none;
-  padding: 10px;
-  text-decoration: none;
-  transition-duration: 0.3s;
-  &:hover {
-    text-shadow: 2px 2px 3px #8888;
-    cursor: pointer;
+  .item {
+    color: #222;
+    font-size: 24px;
+    list-style: none;
+    padding: 10px;
+    text-decoration: none;
+    transition-duration: 0.3s;
+    &:hover {
+      text-shadow: 2px 2px 3px #8888;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -50,7 +49,7 @@ const Navigation: React.FC = () => {
       {
         navigationeMenu.map( menu => (
           <Link href={menu.path}>
-            <Item>{menu.label}</Item>
+            <div className="item">{menu.label}</div>
           </Link>
         ))
       }
