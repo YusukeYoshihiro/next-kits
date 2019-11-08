@@ -13,7 +13,6 @@ module.exports = {
     }
     config.resolve.alias.components = path.join(__dirname, 'components')
     config.resolve.alias.static = path.join(__dirname, 'static')
-    config.resolve.modules = [path.join(__dirname), 'node_modules']
     config.resolve.extensions = [
       '.ts',
       '.tsx',
