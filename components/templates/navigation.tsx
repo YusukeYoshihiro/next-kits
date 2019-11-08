@@ -10,6 +10,9 @@ const Navigation: React.FC = () => {
       <Link href="/about">
         <p>About</p>
       </Link>
+      <Link href="/todo">
+        <p>Todo</p>
+      </Link>
     </div>
   )
 }
