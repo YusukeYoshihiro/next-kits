@@ -102,6 +102,7 @@ amplify/backend/awscloudformation
 amplify/backend-config.json
 amplify/backend/awscloudformation
 amplify/backend/backend-config.json
+amplify/backend/api/todo/stacks/
 build/
 dist/
 node_modules/
