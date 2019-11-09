@@ -100,6 +100,8 @@ amplify/team-provider-info.json
 amplify/backend/amplify-meta.json
 amplify/backend/awscloudformation
 amplify/backend-config.json
+amplify/backend/awscloudformation
+amplify/backend/backend-config.json
 build/
 dist/
 node_modules/

@@ -1,0 +1,12 @@
+projects:
+  todo:
+    schemaPath: graphql/schema.json
+    includes:
+      - ''
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: build/API.ts
+        docsFilePath: graphql
