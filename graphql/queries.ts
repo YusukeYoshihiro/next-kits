@@ -1,6 +1,15 @@
 // tslint:disable
 // this is an auto generated file. This will be overwritten
 
+export const getAllTodo = `query GetTodo() {
+  getAllTodo() {
+    id
+    description
+    isDone
+  }
+}
+`;
+
 export const getTodo = `query GetTodo($id: ID!) {
   getTodo(id: $id) {
     id

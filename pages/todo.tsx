@@ -1,9 +1,12 @@
 import * as React from "react";
+import { NextComponentType, NextPageContext } from 'next';
 import { useState } from 'react';
-// import { API, graphqlOperation } from 'aws-amplify'
+import Amplify from '@aws-amplify/core';
+import API, { graphqlOperation } from '@aws-amplify/api';
 // import nanoid from 'nanoid'
 // import produce from 'immer'
 
+import awsmobile from '../aws-exports';
 // import { ListTodosQuery, GetTodoListQuery } from '../build/API'
 // import config from '../aws-exports'; // awsの認証情報含む設定ファイル
 // import {
@@ -11,13 +14,13 @@ import { useState } from 'react';
 //   deleteTodo,
 //   updateTodo
 // } from '../graphql/mutations';
-// import { getTodo, listTodos } from '../graphql/queries';
+import { getTodo, getAllTodo, listTodos } from '../graphql/queries';
 
 import Head from '../components/templates/head'
 import Navigation from '../components/templates/navigation'
 
 // const MY_ID = nanoid()
-// API.configure(config)
+Amplify.configure(awsmobile);
 
 interface TodoType {
   id: number,
@@ -25,7 +28,8 @@ interface TodoType {
   isDone: boolean
 }
 
-const Todo: React.FC = () => {
+const Todo: NextComponentType<NextPageContext> = props => {
+
   const [todo, setTodo] = useState('');
   const [list, setList] = useState([]);
 
@@ -45,6 +49,7 @@ const Todo: React.FC = () => {
     });
     setList(deletedTodo);
   };
+
   return (
     <div>
       <Head title="todo" />
@@ -76,6 +81,20 @@ const Todo: React.FC = () => {
       }</ul>
     </div>
   )
+};
+
+Todo.getInitialProps = async (props) => {
+//   if(!process.server){
+//     console.log();
+//  }
+  try {
+    const data = await API.graphql(graphqlOperation(getAllTodo,{id: 0}));
+    console.log(data);
+  } catch(e) {
+    console.log(e);
+  }
+  // console.log('getInitialToProps', data);
+  return props;
 };
 
 export default Todo;
