@@ -6,8 +6,16 @@ import { getBlogs } from '../../service/blogs';
 import Head from '../../components/templates/head';
 import Navigation from '../../components/templates/navigation'
 
+interface ItemType {
+  id: String,
+  createdAt: String,
+  updatedAt: String,
+  title: String,
+  date: String,
+  content: String
+}
 interface BlogItemType {
-  item: {
+  items: {
     id: String,
     createdAt: String,
     updatedAt: String,
@@ -25,7 +33,7 @@ const BlogItemStyle = {
 }
 
 const BlogItem: React.FC<BlogItemType> = props => {
-  const { id, title , date } = props.item;
+  const { id, title , date } = props.items;
 
   return (
     <div style={ BlogItemStyle }>
@@ -39,15 +47,15 @@ const BlogItem: React.FC<BlogItemType> = props => {
   )
 }
 
-const Blogs: NextPage<{}> = (props) => {
-  const { contents: blogList } = props;
+const Blogs: NextPage = (props: any) => {
+  const { contents } = props;
 
   return (
     <div className="blog-container">
       <Head title="Blogs page" description="" url="" ogImage="" />
       <Navigation />
       {
-        blogList.map( item => <BlogItem item={ item } key={ item.id } />)
+        contents.map( item => <BlogItem items={ item } key={ item.id } />)
       }
     </div>
   )
