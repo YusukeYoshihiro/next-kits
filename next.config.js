@@ -3,9 +3,14 @@ const path = require('path');
 const serverless = process.env.ENV_SERVELESS;
 const configServeless = serverless ? { target: serverless} : {};
 
+require("dotenv").config();
+
 module.exports = {
   ...configServeless,
   dir: './',
+  env: {
+    X_API_KEY: process.env.X_API_KEY
+  },
   webpack(config, options) {
     const { dev } = options
     if (!dev) {
