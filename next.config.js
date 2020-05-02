@@ -1,12 +1,12 @@
 const path = require('path');
 
-const serverless = process.env.ENV_SERVELESS;
-const configServeless = serverless ? { target: serverless} : {};
+const serverless = process.env.ENV_SERVERLESS;
+const configServerless = serverless ? { target: serverless} : {};
 
 require("dotenv").config();
 
 module.exports = {
-  ...configServeless,
+  ...configServerless,
   dir: './',
   env: {
     X_API_KEY: process.env.X_API_KEY
