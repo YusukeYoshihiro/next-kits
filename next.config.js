@@ -3,7 +3,7 @@ const path = require('path');
 const serverless = process.env.ENV_SERVERLESS;
 const configServerless = serverless ? { target: serverless} : {};
 
-require("dotenv").config();
+require("dotenv").config({path: './.env'});
 
 module.exports = {
   ...configServerless,
