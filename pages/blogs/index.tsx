@@ -61,9 +61,14 @@ const Blogs: NextPage = (props: any) => {
   )
 }
 
-Blogs.getInitialProps = async () => {
+// export const getStaticPaths = async () => ({
+//   paths: ['/blogs/'],
+//   fallback: true
+// })
+
+export const getStaticProps = async () => {
   const { data } = await getBlogs();
-  return { contents: data.contents };
+  return { props: { contents: data.contents } };
 }
 
 export default Blogs;

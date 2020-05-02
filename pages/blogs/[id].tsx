@@ -2,7 +2,7 @@ import { NextPage } from 'next'
 
 import Head from '../../components/templates/head';
 import Navigation from '../../components/templates/navigation'
-import { getBlogBy } from '../../service/blogs'
+import { getBlogBy, getBlogs } from '../../service/blogs'
 
 interface BlogItemType {
   id: String,
@@ -28,10 +28,19 @@ const BlogsItemPage: NextPage<BlogItemType> = (props) => {
   )
 }
 
-BlogsItemPage.getInitialProps = async ({ query }) => {
-  const { id } = query;
+export const getStaticPaths = async () => {
+  const { data } = await getBlogs();
+  const paths = data.contents.map(item => `/blogs/${item.id}`);
+  return {
+    paths,
+    fallback: true
+  }
+}
+
+export const getStaticProps = async ({ params }) => {
+  const { id } = params;
   const { data } = await getBlogBy(id);
-  return { ...data }
+  return { props: { ...data }}
 }
 
 export default BlogsItemPage;
