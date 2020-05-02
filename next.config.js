@@ -31,16 +31,6 @@ module.exports = {
       '.jpeg'
     ]
     return config
-  },
-  exportPathMap() {
-    return {
-      '/': { page: '/' },
-      '/about': { page: '/about' },
-      '/blogs': { page: '/blogs' },
-      '/blogs/D1ZFxRsUN': { page: '/blogs/[id]' },
-      '/blogs/dq4tFey5_': { page: '/blogs/[id]' },
-      '/blogs/KLOprAW0o': { page: '/blogs/[id]' }
-    }
   }
 };
 
