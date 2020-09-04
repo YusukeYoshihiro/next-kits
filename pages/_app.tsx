@@ -1,11 +1,12 @@
-import * as React from 'react'
-import App from 'next/app'
+import * as React from 'react';
+import { Provider } from 'react-redux'
 
-class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props
-    return <Component {...pageProps} />
-  }
-}
+import { store } from '../store';
+
+const MyApp = ({ Component, pageProps }) => (
+  <Provider store={store}>
+    <Component {...pageProps} />
+  </Provider>
+);
 
 export default MyApp

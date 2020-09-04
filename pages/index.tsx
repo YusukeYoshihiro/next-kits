@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import Head from '../components/templates/head'
 import Navigation from '../components/templates/navigation'
 
