@@ -15,13 +15,18 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.4.0",
     "next": "^9.5.2",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5"
   },
   "devDependencies": {
     "@types/node": "^12.11.7",
-    "@types/react": "^16.9.11",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-redux": "^7.1.9",
     "@zeit/next-css": "^1.0.1",
     "@zeit/next-sass": "^1.0.1",
     "eslint": "^5.11.0",
